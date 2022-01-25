@@ -1,0 +1,40 @@
+<div class="row mt-5">
+
+  <div class="col-6 card shadow mx-auto p-3  mb-5 bg-dark text-white">
+
+    <h3 class="text-center">SAISISSEZ VOS IDENTIFIANTS</h3>
+
+    <div *ngIf="errMsg" class="alert alert-danger p-3">{{errMsg}}</div>
+
+    <form #logForm="ngForm" (ngSubmit)="onSubmitLogForm()">
+
+      <div class="mb-3">
+        <label for="user">Utilisateur</label>
+        <input id="User" class="form-control" placeholder="Votre identifiant utilisateur, s'il vous plaît !"
+          name="utilisateur" [(ngModel)]="user" required user>
+      </div>
+
+      <div class="mb-3">
+        <label for="password">Mot de passe:</label>
+        <input type="password" id="password" class="form-control" placeholder="Password" name="password"
+          [(ngModel)]="password" required password>
+
+      </div>
+
+      <div class="row col-4 mx-auto">
+        <button type="submit" class="btn btn-outline-light btn-lg" [disabled]="logForm.invalid">
+          CONNEXION
+
+        </button>
+
+      </div>
+
+
+
+    </form>
+
+
+  </div>
+
+
+</div>

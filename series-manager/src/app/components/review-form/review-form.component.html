@@ -1,0 +1,29 @@
+<form [formGroup]="form" (ngSubmit)="onSubmitReviewForm()">
+
+  <div class="form-group">
+    <label for="pseudo">Votre pseudo</label>
+    <input
+    id ="pseudo"
+    class="form-control"
+    formControlName= "pseudo"
+    [(ngModel)]="review.pseudo">
+  </div>
+
+
+  <div class="form-group">
+    <label for="content">Votre commentaire</label>
+    <textarea
+    id ="content"
+    class="form-control"
+    formControlName= "content"
+    [(ngModel)]="review.content"></textarea>
+  </div>
+
+  <div class ="row col-4 mx-auto my-3">
+
+    <button type="submit" class="btn btn-dark"
+    [disabled]="form.invalid"
+    >{{buttonLabel}}</button>
+
+    </div>
+  </form>

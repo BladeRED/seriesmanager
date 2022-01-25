@@ -1,0 +1,45 @@
+<div class="d-flex justify-content-end mt-2">
+  <button
+    [routerLink]="['/series', 'new']"
+    class="btn btn-success mx-2 my-2"
+  >
+    AJOUTER
+  </button>
+</div><table class="table table-dark table-striped mb-5">
+  <thead>
+    <tr>
+      <th scope="col">#ID</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Date de la première saison</th>
+      <th scope="col" class ="text-end d-flex justify-content-center">Actions</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let serie of seriesList; index as i">
+      <th scope="row" class="table-dark ">{{ serie.id }}</th>
+      <td class="table-dark">{{ serie.name }}</td>
+      <td class ="table-dark">{{ serie.firstSeasonRelease | date: 'dd-MM-yyyy' }}</td>
+      <td class ="table-dark d-flex justify-content-center">
+      <button
+        [routerLink]="['/series', serie.id]"
+        class="btn btn-outline-light mx-2"
+      >
+        DETAILS
+      </button>
+      <button
+        [routerLink]="['/series', 'edit', serie.id]"
+        class="btn btn-outline-secondary mx-2"
+      >
+        EDITER
+      </button>
+      <button
+      (click)="onClickDeleteSerie(i)"
+        class="btn btn-outline-danger mx-2"
+      >
+        SUPPRIMER
+      </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

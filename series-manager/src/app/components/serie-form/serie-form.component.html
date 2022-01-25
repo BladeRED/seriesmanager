@@ -1,0 +1,45 @@
+<form [formGroup]="form" (ngSubmit)="onSubmitSerieForm()">
+
+  <div class="form-group my-1">
+    <label for="name" class="mb-2">Nom de la série</label>
+    <input id="name" class="form-control mb-3" formControlName="name" [(ngModel)]="serie.name">
+  </div>
+
+  <div class="form-group my-1">
+    <label for="firstSeasonRelease" class="mb-2">Date de la première saison</label>
+    <input id="firstSeasonRelease" type="date" class="form-control mb-3" formControlName="firstSeasonRelease"
+      (ngModelChange)="onChangeDate($event)" [ngModel]="serie.firstSeasonRelease | date:'yyyy-MM-dd'">
+  </div>
+
+  <div class="form-group  my-1">
+    <label for="numberOfSeason" class="mb-2">Nombres de saisons</label>
+    <div class ="d-flex justify-content-center">
+    <input type="number" min="0" max="99" id="numberOfSeason" class="form-control text-center w-50 mb-3"
+      formControlName="numberOfSeasons" [(ngModel)]="serie.numberOfSeasons">
+    </div>
+  </div>
+
+  <div class="form-group my-1">
+    <label for="author" class="mb-2">Description de la série</label>
+    <input id="description" class="form-control mb-3" formControlName="description" [(ngModel)]="serie.description">
+  </div>
+
+  <div class="form-group my-1">
+    <label for="critic" class="mb-2">Critique de la série</label>
+    <input id="critic" class="form-control mb-3" formControlName="critic" [(ngModel)]="serie.critic">
+  </div>
+
+  <div class="form-group my-1">
+    <label for="imgUrl" class="mb-2">URL de l'image de la série</label>
+    <input id="imgUrl" class="form-control mb-3" formControlName="imgUrl" [(ngModel)]="serie.imgUrl">
+  </div>
+
+  <div class="row col-4 mx-auto mt-3">
+
+
+    <button type="submit" class="btn btn-success btn-lg" [disabled]="form.invalid">{{buttonLabel}}</button>
+
+  </div>
+
+
+</form>

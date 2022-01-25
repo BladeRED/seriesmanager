@@ -1,0 +1,75 @@
+/* BACKGROUND */
+
+body{
+
+  background: linear-gradient(180deg, rgba(70,57,57,1) 38%, rgba(168,34,34,1) 100%);
+  width: 100%
+    }
+
+
+/*POLICES */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+/* POLICES MODIFICATIONS */
+
+h3,h5 {
+
+  font-family: 'Bebas Neue', "Helvetica Neue",sans-serif;
+  font-size: 38px;
+  text-shadow: 0px 12px 12px black;
+
+
+  }
+
+tr, button,h6 {
+
+  font-family: 'Oswald', "Helvetica Neue",sans-serif;
+  font-size: 18px;
+  text-shadow: none;
+
+
+}
+
+h5.comment {
+
+  font-family: 'Oswald', "Helvetica Neue",sans-serif;
+  font-size: 24px;
+  text-shadow: none;
+
+
+}
+
+card {
+
+
+box-shadow: 24px;
+
+}
+
+img{
+
+width:75%
+
+/*TABLE BACKGROUND */
+
+}
+
+.table-secondary{
+
+  background: #892A2A !important
+
+}
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+  --bs-table-accent-bg: #892A2A !important;
+  color: var(--bs-table-striped-color);
+}
+thead,tr,th,td,tbody{
+
+  background: #892A2A  !important;
+  border-color: black;
+
+}

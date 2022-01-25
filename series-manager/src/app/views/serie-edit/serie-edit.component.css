@@ -1,0 +1,36 @@
+/* BACKGROUND */
+
+body {
+  background: linear-gradient(
+    180deg,
+    rgba(70, 57, 57, 1) 38%,
+    rgba(168, 34, 34, 1) 100%
+  );
+  width: 100%;
+}
+
+/*POLICES */
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
+/* POLICES MODIFICATIONS */
+
+h5 {
+  font-family: "Bebas Neue", "Helvetica Neue", sans-serif;
+  font-size: 38px;
+  text-shadow: 0px 12px 12px black;
+}
+
+tr,
+button,
+label,
+input {
+  font-family: "Oswald", "Helvetica Neue", sans-serif !important;
+  font-size: 18px;
+}
+
+card {
+  box-shadow: 24px;
+}

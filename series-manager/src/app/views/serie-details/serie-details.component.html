@@ -1,0 +1,46 @@
+<div *ngIf="serie" class="row col-7 card bg-dark text-white shadow mx-auto">
+  <div class="card-body text-center">
+    <h5 class="card-title">{{serie.name}} - {{serie.numberOfSeasons}} saisons</h5>
+    <h6 class="card-title text-center"> Première saison paru le :{{ serie.firstSeasonRelease | date: 'dd-MM-yyyy' }}
+    </h6>
+    <img src="{{serie.imgUrl}}" class="card-img-top">
+    <h6 class="my-4">{{serie.description}}</h6>
+    <h5 class="card-title mb-4">La presse en parle</h5>
+    <h6 class="my-2">{{serie.critic}}</h6>
+    <h5 class="my-4">Commentaires</h5>
+    <table class="table table-secondary table-striped mt-3">
+      <thead class="table-secondary">
+        <tr>
+          <th scope="col">#ID</th>
+          <th scope="col">Pseudo</th>
+          <th scope="col">Date du commentaire</th>
+          <th scope="col">Commentaire</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let review of serie.review;">
+          <th scope="row" class="table-secondary ">{{review.id}}</th>
+          <td class="table-secondary">{{review.pseudo}}</td>
+          <td class="table-secondary">{{review.date | date: 'dd-MM-yyyy'}}</td>
+          <td class="table-secondary">
+            {{review.content}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button routerLink="/series" class="btn btn-outline-secondary mt-2">RETOUR</button>
+  </div>
+
+  <div class="row col-6 card shadow-lg mx-auto my-auto">
+
+    <div class="card-body text-center text-dark">
+
+      <h5 class="card-title comment">Ajouter un commentaire</h5>
+
+      <app-review-form buttonLabel="Ajouter" (formSubmitted)="onSubmitCreateReview($event)"></app-review-form>
+
+    </div>
+
+  </div>
+
+</div>
